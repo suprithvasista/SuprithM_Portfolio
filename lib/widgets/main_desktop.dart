@@ -74,9 +74,9 @@ class MainDesktop extends StatelessWidget {
 
   // Function to download PDF from the local files in the web directory
   void downloadPDF() {
-    const url = '/Suprith M_CV.pdf'; // The relative path to your PDF in the web directory
+    const url = 'public/suprith_m_resume.pdf'; // The relative path to your PDF in the web directory
     final anchor = html.AnchorElement(href: url)
-      ..setAttribute('download', 'Suprith M_CV.pdf') // Name of the downloaded file
+      ..setAttribute('download', 'suprith_m_resume.pdf') // Name of the downloaded file
       ..click();
   }
 
