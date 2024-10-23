@@ -215,7 +215,6 @@ class SecondScreen extends StatelessWidget {
 }
 */
 import 'package:flutter/material.dart';
-import 'package:porfoliojob/constants/sns_links.dart';
 import '../constants/colors.dart';
 import 'dart:js' as js;
 import 'package:porfoliojob/utils/project_utils.dart'; // Import your ProjectUtils class
@@ -232,7 +231,7 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColor.bgLight2,
       appBar: AppBar(
-        title: const Text('Title'),
+        title: Text(project.title),
         backgroundColor: CustomColor.bgLight2,
       ),
       body: Column(
@@ -248,7 +247,7 @@ class SecondScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
-                      project.subtitle, // Use the subtitle from the project
+                      project.fullcontent, // Use the full content from the project
                       style: const TextStyle(fontSize: 16.0),
                       textAlign: TextAlign.justify,
                     ),
@@ -294,25 +293,66 @@ class SecondScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            "Available on",
-            style: TextStyle(
+           Text(
+            project.displayFooter,
+            style: const TextStyle(
               color: CustomColor.yellowsecondary,
               fontSize: 10.0,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 6.0),
-            child: InkWell(
-              onTap: () {
-                js.context.callMethod('open', [SnsLinks.devpost]);
-              },
-              child: Image.asset(
-                "assets/web_icon.png",
-                width: 20,
+          const Spacer(),
+          if (project.webLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.webLink]);
+                },
+                child: Image.asset(
+                  "assets/web_icon.png",
+                  width: 20,
+                ),
               ),
             ),
-          ),
+          if (project.pypiLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.pypiLink]);
+                },
+                child: Image.asset(
+                  "assets/PythonLogo.webp",
+                  width: 20,
+                ),
+              ),
+            ),
+          if(project.gitLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.gitLink]);
+                },
+                child: Image.asset(
+                  "assets/github.png",
+                  width: 20,
+                ),
+              ),
+            ),
+          if(project.verifierLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.verifierLink]);
+                },
+                child: Image.asset(
+                  "assets/verified.jpg",
+                  width: 20,
+                ),
+              ),
+            ),
         ],
       ),
     );

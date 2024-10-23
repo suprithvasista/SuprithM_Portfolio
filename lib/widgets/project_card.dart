@@ -101,18 +101,40 @@ class ProjectCardWidget extends StatelessWidget {
               color: CustomColor.bgLight1,
               padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 10),
               child: Row(children: [
-                const Text("Available on",style: TextStyle(
+                 Text(projects.displayFooter,style: const TextStyle(
                   color: CustomColor.yellowsecondary,
                   fontSize: 10.0,
                 ),
                 ),
                 const Spacer(),
+                if(projects.webLink!=null)
                 Padding(
                   padding: const EdgeInsets.only(left: 6.0),
                   child: Image.asset("assets/web_icon.png",
-                    width: 20,
+                    width: 19,
                   ),
                 ),
+                if(projects.pypiLink!=null)
+                Padding(
+                  padding: const EdgeInsets.only(left: 6.0),
+                  child: Image.asset("assets/PythonLogo.webp",
+                    width: 19,
+                  ),
+                ),
+                if(projects.gitLink!=null)
+                Padding(
+                  padding: const EdgeInsets.only(left: 6.0),
+                  child: Image.asset("assets/github.png",
+                    width: 19,
+                  ),
+                ),
+                if(projects.verifierLink!=null)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 6.0),
+                    child: Image.asset("assets/verified.jpg",
+                      width: 19,
+                    ),
+                  ),
               ],
               ),
             )

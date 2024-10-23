@@ -120,7 +120,7 @@ class MainDesktop extends StatelessWidget {
                     ),
                     backgroundColor: CustomColor.yellowPrimary,
                   ),
-                  child: const Text("Get in touch"),
+                  child: const Text("Get in touch",style: TextStyle(color: CustomColor.whitePrimary),),
                 ),
               ),
               const SizedBox(height: 15), // Add spacing between buttons
@@ -134,7 +134,7 @@ class MainDesktop extends StatelessWidget {
                     ),
                     backgroundColor: CustomColor.yellowPrimary,
                   ),
-                  child: const Text("Download Resume"),
+                  child: const Text("Download Resume",style: TextStyle(color: CustomColor.whitePrimary),),
                 ),
               ),
             ],

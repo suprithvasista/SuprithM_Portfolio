@@ -143,7 +143,6 @@ class PopUpWindow {
 
 
 import 'package:flutter/material.dart';
-import 'package:porfoliojob/constants/sns_links.dart';
 import 'package:porfoliojob/utils/project_utils.dart';
 import '../constants/colors.dart';
 import 'dart:js' as js;
@@ -172,7 +171,7 @@ class PopUpWindow {
                 _buildDialogContent(dialogWidth, dialogHeight, project),
                 _buildDialogTitle(project.title),
                 _buildCloseButton(context),
-                _buildFooter(),
+                _buildFooter(project),
               ],
             ),
           ),
@@ -205,11 +204,12 @@ class PopUpWindow {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                project.subtitle, // Use the description from the project
+                project.fullcontent, // Use the description from the project
                 style: const TextStyle(fontSize: 16.0),
                 textAlign: TextAlign.justify,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 5,
+                //Did this change to avoid the overflow of project contents
+                //overflow: TextOverflow.ellipsis,
+                //maxLines: 5,
               ),
             ),
             const SizedBox(height: 20),
@@ -244,7 +244,7 @@ class PopUpWindow {
     );
   }
 
-  static Positioned _buildFooter() {
+  static Positioned _buildFooter(ProjectUtils project) {
     return Positioned(
       bottom: 0,
       left: 0,
@@ -260,22 +260,62 @@ class PopUpWindow {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         child: Row(
           children: [
-            const Text(
-              "Available on",
-              style: TextStyle(
+             Text(
+               project.displayFooter,
+              style: const TextStyle(
                 color: CustomColor.yellowsecondary,
                 fontSize: 10.0,
               ),
             ),
             const Spacer(),
+            if (project.webLink!=null)
             Padding(
               padding: const EdgeInsets.only(left: 6.0),
               child: InkWell(
                 onTap: () {
-                  js.context.callMethod('open', [SnsLinks.devpost]);
+                  js.context.callMethod('open', [project.webLink]);
                 },
                 child: Image.asset(
                   "assets/web_icon.png",
+                  width: 20,
+                ),
+              ),
+            ),
+            if (project.pypiLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.pypiLink]);
+                },
+                child: Image.asset(
+                  "assets/PythonLogo.webp",
+                  width: 20,
+                ),
+              ),
+            ),
+            if(project.gitLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.gitLink]);
+                },
+                child: Image.asset(
+                  "assets/github.png",
+                  width: 20,
+                ),
+              ),
+            ),
+            if(project.verifierLink!=null)
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0),
+              child: InkWell(
+                onTap: () {
+                  js.context.callMethod('open', [project.verifierLink]);
+                },
+                child: Image.asset(
+                  "assets/verified.jpg",
                   width: 20,
                 ),
               ),

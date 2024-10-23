@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:porfoliojob/constants/colors.dart';
+import 'package:porfoliojob/constants/sns_links.dart';
 import 'package:porfoliojob/widgets/Contact_section.dart';
 import 'package:porfoliojob/widgets/drawer_mobile.dart';
 import 'package:porfoliojob/widgets/header_mobile.dart';
@@ -16,6 +17,7 @@ import 'package:porfoliojob/widgets/skills_desktop.dart';
 import '../constants/size.dart';
 import '../widgets/footer.dart';
 import '../widgets/skills_mobile.dart';
+import 'dart:js' as js;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -115,7 +117,7 @@ class _HomePageState extends State<HomePage> {
   }
   void scrollToSection(int navIndex){
     if (navIndex==4){
-      return;
+      js.context.callMethod('open', [SnsLinks.medium]);
     }
     final key=navbarkeys[navIndex];
     Scrollable.ensureVisible(key.currentContext!,duration: const Duration(milliseconds: 500),curve: Curves.easeInOut,
