@@ -152,6 +152,50 @@ List<ProjectUtils> hobbyProjectUtils = [
     'https://github.com/suprithvasista/ConsolidationLibrary/',
     displayFooter:'Available on',
   ),
+  ProjectUtils(
+    image: 'assets/projects/Porfolio_creator_enhancer.png',
+    title: 'Portfolio Generator And Enhancer',
+    subtitle:
+    'Create and deploy stunning portfolios in one click! Powered by Gemini API, it enhances your projects for a dynamic, professional edge',
+    fullcontent:
+    'Introduction\n'
+    '   This application, built with Streamlit, simplifies the creation, deployment, and management of Flutter-based web portfolios. It integrates AI to enhance project descriptions and offers seamless GitHub and Vercel deployment, customizable themes, and centralized profile management.\n'
+    'Key Features\n'
+        '* Profile Management: Define and manage your portfolio details.\n'
+        '* AI-Powered Enhancement: Improve project details dynamically using Gemini-1.5 Pro.\n'
+        '* GitHub & Vercel Integration: Fork, modify, and deploy projects effortlessly.\n'
+        '* Customizable UI: Personalize colors, layouts, and navigation.\n'
+        '* Project Categories: Showcase work and hobby projects with rich details, images, and external links.\n'
+        '* Centralized Social Media Management: Validate and manage all profile links in one place.\n'
+        '* Scalability: Designed for individual and team use, simplifying collaborative processes.\n'
+    'Tech Stack and Libraries Used\n'
+        '* Streamlit: Interactive and dynamic web application framework.\n'
+        '* Streamlit Option Menu: For seamless navigation across sections.\n'
+        '* BigQuery (GCP): Data warehousing and project tracking.\n'
+        '* BigQuery API: Fetch and display deployment details dynamically.\n'
+        '* GitHub API: Repository forking, file modification, and management.\n'
+        '* Vercel API: Direct deployment of projects from the application.\n'
+        '* Regex (re): URL validation for social media links.\n'
+        '* Base64: Image encoding for uploads.\n'
+        '* Python pathlib: File and directory management.\n'
+        '* AI Integration (Gemini-1.5 Pro): For enhancing content dynamically.\n'
+        '* SMTP Library: For custom OTP-based email authentication.\n'
+    'Architecture\n'
+        '* Frontend: Built with Streamlit for an intuitive user experience.\n'
+        '* Backend Integrations: GitHub and Vercel APIs for deployment, BigQuery for data management, and AI for project enhancements.\n'
+        '* Session Management: Persistent session state for user inputs and actions.\n'
+    'Benefits\n'
+        'This app solves key challenges for developers by:\n'
+          '* Simplifying project deployment with GitHub and Vercel.\n'
+          '* Saving time and improving content quality with AI-powered enhancements.\n'
+          '* Consolidating profile and social media management.\n'
+          '* Enabling fully customizable portfolio layouts with minimal coding effort.\n',
+    webLink:
+    'https://portfolio-generator-enhancer.streamlit.app/',
+    gitLink:
+    'https://github.com/suprithvasista/Portfolio_Generator_Enhancer/',
+    displayFooter:'Available on',
+  ),
 ];
 
 // ###############

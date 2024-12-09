@@ -19,6 +19,18 @@ const List<Map> platformItems = [
     "img": "assets/flutter.png",
     "title": "Flutter Development",
   },
+  {
+    "img": "assets/Gcp-Logo.png",
+    "title": "Google Cloud Platform",
+  },
+  {
+    "img": "assets/AzureCloud.webp",
+    "title": "Azure Cloud"
+  },
+  {
+    "img": "assets/ci_cd.png",
+    "title": "CI/CD"
+  },
 ];
 
 const List<Map> skillItem = [
@@ -27,20 +39,12 @@ const List<Map> skillItem = [
     "title": "Python"
   },
   {
-    "img": "assets/big data.png",
-    "title": "Big Data"
-  },
-  {
     "img": "assets/spark.png",
     "title": "Spark"
   },
   {
     "img": "assets/pyspark.png",
     "title": "PySpark"
-  },
-  {
-    "img": "assets/AzureCloud.webp",
-    "title": "Azure Cloud"
   },
   {
     "img": "assets/DataBricks.png",
@@ -69,5 +73,9 @@ const List<Map> skillItem = [
   {
     "img": "assets/dart.png",
     "title": "Dart"
+  },
+  {
+    "img": "assets/gcp_bigquery.png",
+    "title": "Google BigQuery"
   },
 ];
