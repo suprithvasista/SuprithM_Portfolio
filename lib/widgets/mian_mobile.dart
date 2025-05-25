@@ -126,7 +126,7 @@ class MainMobile extends StatelessWidget {
           const Align(
             alignment: Alignment.topLeft,
             child: Text(
-              "Hi,\nI'm Suprith M\nAKA Data Engineer",
+              "Hi,\nI'm Suprith M\nAKA Senior Data Engineer",
               style: TextStyle(
                 fontSize: 24.0,
                 height: 1.5,
