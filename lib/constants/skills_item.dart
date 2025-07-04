@@ -31,6 +31,10 @@ const List<Map> platformItems = [
     "img": "assets/ci_cd.png",
     "title": "CI/CD"
   },
+  {
+    "img": "assets/snowflake.png",
+    "title": "SnowFlake"
+  },
 ];
 
 const List<Map> skillItem = [
